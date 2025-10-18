@@ -38,7 +38,7 @@ def get_iso_timestamp():
     rtc = machine.RTC()
     now = rtc.datetime()
     ms = time.time_ns() // 1_000_000 % 1000
-    return f"{now[0]}-{now[1]:02}-{now[2]:02}T{now[4]:02}:{now[5]:02}:{now[6]:02}.{ms:03}+00:00"
+    return f"{now[0]}{now[1]:02}{now[2]:02}T{now[4]:02}{now[5]:02}{now[6]:02}.{ms:03}Z"
 
 # Simulated data packets
 # In a real sensor, you would gather actual data to send
